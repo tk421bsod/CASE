@@ -4,3 +4,4 @@ deployment:
     - export DEPLOYPATH=/home2/albanygr/public_html/CASE/
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp style.css $DEPLOYPATH
+    - /bin/cp login.html $DEPLOYPATH
