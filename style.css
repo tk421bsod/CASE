@@ -1,10 +1,15 @@
 /* Can add in custom fonts later */
-
+/* This is to remove the arrows on the input fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 body
 {
 
-    
+    /* This is for the station's name */
     h2
     {
         width: fit-content;
@@ -14,15 +19,14 @@ body
         margin-bottom: 0px;
     }
 
-
-
-
+    
+    /* This is for the "Generate New Schedule" button */
     #generate-new-schedule
     {
-        margin: 0 auto;
-        margin-top: 40px;
+       margin: 40px auto 0;
     }
     
+    /* As of now, I will just call this radio-station-one and that's basically the whole table */
     #radio-station-one
     {
         
@@ -43,7 +47,6 @@ body
         margin: 0 auto;
         border: 1px solid black;
         padding: 20px;
-        margin-top: 0px;
         display: flex;
         flex-direction: column;
         
@@ -61,27 +64,21 @@ body
             padding: 5px;
         }
 
-       #button
-       {
-            display: flex;
-            justify-content: flex-end;
-       }
-    
-
     }
 
+    /* This is for the adding a new schedule block. */
     #add-schedule
     {
-        display: flex;
+        display: grid;
         padding: 20px;
-        display: flex;
-        margin: 0 auto;
-        margin-top: 40px;
-        border: 1px solid black;        
+        margin: 40px auto 0;
+        border: 1px solid black;
+        gap: 20px;
+        justify-items: center;
     }
 
-    
-    #monthy-spending
+    /* This is for the monthly spending at the bottom */
+    #monthly-spending
     {
         display: flex;
         justify-content: flex-end;
@@ -94,27 +91,12 @@ body
         }
     }
 
+    /* 
+        This is for the last row in the table. It's trying to mimic what the final
+        row looks like in the excel sheet.
+    */
     tr:nth-last-child(1)
     {
         border-top: 1px solid black;
-    }
-}
-
-
-
-body #add-schedule
-{
-    display: grid;
-    gap: 20px;
-
-    #new-schedule
-    {
-        margin: 0 auto;
-        display: inline-block;
-    }
-
-    select
-    {
-        margin: 0 auto;
     }
 }

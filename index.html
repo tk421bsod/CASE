@@ -29,7 +29,7 @@
                     <h3>Type of Schedule</h3>
                 </div>
                 <table>
-                    <!-- Bottom tr has all headers -->
+                    <!-- tr below has all headers -->
                     <tr>
                         <!-- Headers for the table  -->
                         <th>DAYPART</th>
@@ -56,15 +56,15 @@
                                 <option value="10min">:10</option>
                             </select>
                         </td>
-                        <td><input type = "number" class = "monday"></td>
-                        <td><input type = "number" class = "tuesday"></td>
-                        <td><input type = "number" class = "wednesday"></td>
-                        <td><input type = "number" class = "thursday"></td>
-                        <td><input type = "number" class = "friday"></td>
-                        <td><input type = "number" class = "saturday"></td>
-                        <td><input type = "number" class = "sunday"></td>
-                        <td><input type = "number" class = "rate"></td>
-                        <td><input type = "number" class = "cost."></td>
+                        <td><input type = "number" class = "monday rowOne"></td>
+                        <td><input type = "number" class = "tuesday rowOne"></td>
+                        <td><input type = "number" class = "wednesday rowOne"></td>
+                        <td><input type = "number" class = "thursday rowOne"></td>
+                        <td><input type = "number" class = "friday rowOne"></td>
+                        <td><input type = "number" class = "saturday rowOne"></td>
+                        <td><input type = "number" class = "sunday rowOne"></td>
+                        <td><input type = "number" class = "rate rowOne"></td>
+                        <td class = "cost" id = "rowOneTotal"></td>
                     </tr>
                     <tr>
                         <td class = "time-slot">Middays (10a-3p)</td>
@@ -77,15 +77,15 @@
                                 <option value="10min">:10</option>
                             </select>
                         </td>
-                        <td><input type = "number" class = "monday"></td>
-                        <td><input type = "number" class = "tuesday"></td>
-                        <td><input type = "number" class = "wednesday"></td>
-                        <td><input type = "number" class = "thursday"></td>
-                        <td><input type = "number" class = "friday"></td>
-                        <td><input type = "number" class = "saturday"></td>
-                        <td><input type = "number" class = "sunday"></td>
-                        <td><input type = "number" class = "rate"></td>
-                        <td><input type = "number" class = "cost."></td>
+                        <td><input type = "number" class = "monday rowTwo"></td>
+                        <td><input type = "number" class = "tuesday rowTwo"></td>
+                        <td><input type = "number" class = "wednesday rowTwo"></td>
+                        <td><input type = "number" class = "thursday rowTwo"></td>
+                        <td><input type = "number" class = "friday rowTwo"></td>
+                        <td><input type = "number" class = "saturday rowTwo"></td>
+                        <td><input type = "number" class = "sunday rowTwo"></td>
+                        <td><input type = "number" class = "rate rowTwo"></td>
+                        <td class = "cost" id = "rowTwoTotal"></td>
                     </tr>
                     <tr>
                         <td class = "time-slot">Afternoons(3p-6:30p)</td>
@@ -98,15 +98,15 @@
                                 <option value="10min">:10</option>
                             </select>
                         </td>
-                        <td><input type = "number" class = "monday"></td>
-                        <td><input type = "number" class = "tuesday"></td>
-                        <td><input type = "number" class = "wednesday"></td>
-                        <td><input type = "number" class = "thursday"></td>
-                        <td><input type = "number" class = "friday"></td>
-                        <td><input type = "number" class = "saturday"></td>
-                        <td><input type = "number" class = "sunday"></td>
-                        <td><input type = "number" class = "rate"></td>
-                        <td><input type = "number" class = "cost."></td>
+                        <td><input type = "number" class = "monday rowThree"></td>
+                        <td><input type = "number" class = "tuesday rowThree"></td>
+                        <td><input type = "number" class = "wednesday rowThree"></td>
+                        <td><input type = "number" class = "thursday rowThree"></td>
+                        <td><input type = "number" class = "friday rowThree"></td>
+                        <td><input type = "number" class = "saturday rowThree"></td>
+                        <td><input type = "number" class = "sunday rowThree"></td>
+                        <td><input type = "number" class = "rate rowThree"></td>
+                        <td class = "cost" id = "rowTotalThree"></td>
                     </tr>
                     <tr>
                         <td class = "time-slot">Sa-Su 9a-2p</td>
@@ -119,15 +119,15 @@
                                 <option value="10min">:10</option>
                             </select>
                         </td>
-                        <td><input type = "number" class = "monday"></td>
-                        <td><input type = "number" class = "tuesday"></td>
-                        <td><input type = "number" class = "wednesday"></td>
-                        <td><input type = "number" class = "thursday"></td>
-                        <td><input type = "number" class = "friday"></td>
-                        <td><input type = "number" class = "saturday"></td>
-                        <td><input type = "number" class = "sunday"></td>
-                        <td><input type = "number" class = "rate"></td>
-                        <td><input type = "number" class = "cost."></td>
+                        <td><input type = "number" class = "monday rowFour"></td>
+                        <td><input type = "number" class = "tuesday rowFour"></td>
+                        <td><input type = "number" class = "wednesday rowFour"></td>
+                        <td><input type = "number" class = "thursday rowFour"></td>
+                        <td><input type = "number" class = "friday rowFour"></td>
+                        <td><input type = "number" class = "saturday rowFour"></td>
+                        <td><input type = "number" class = "sunday rowFour"></td>
+                        <td><input type = "number" class = "rate rowFour"></td>
+                        <td class = "cost" id = "rowTotalFour"></td>
                     </tr>
                     <tr>
                         <td class = "time-slot">M-Su 12M-12M Bonus</td>
@@ -140,15 +140,15 @@
                                 <option value="10min">:10</option>
                             </select>
                         </td>
-                        <td><input type = "number" class = "monday"></td>
-                        <td><input type = "number" class = "tuesday"></td>
-                        <td><input type = "number" class = "wednesday"></td>
-                        <td><input type = "number" class = "thursday"></td>
-                        <td><input type = "number" class = "friday"></td>
-                        <td><input type = "number" class = "saturday"></td>
-                        <td><input type = "number" class = "sunday"></td>
-                        <td><input type = "number" class = "rate"></td>
-                        <td><input type = "number" class = "cost"></td>
+                        <td><input type = "number" class = "monday rowFive"></td>
+                        <td><input type = "number" class = "tuesday rowFive"></td>
+                        <td><input type = "number" class = "wednesday rowFive"></td>
+                        <td><input type = "number" class = "thursday rowFive"></td>
+                        <td><input type = "number" class = "friday rowFive"></td>
+                        <td><input type = "number" class = "saturday rowFive"></td>
+                        <td><input type = "number" class = "sunday rowFive"></td>
+                        <td><input type = "number" class = "rate rowFive"></td>
+                        <td class = "cost" id = "rowTotalFive"></td>
                     </tr>
                     <tr>
                         <td class = "time-slot">Weekly Totals:</td>
@@ -165,13 +165,15 @@
                         <td id = "costTotal"></td>                    
                     </tr>
                 </table>
-                <div id = "button">
+
+                <!-- Commenting this out for now -->
+                <!-- <div id = "button">
                     <button id = "get-totals">Generate Weekly Totals</button>
-                </div>
+                </div> -->
+
                 <div id = "generate-new-schedule">
-                    <button id = "make-new-schedule">Generate New Schedule</button>
-                </div>
-                
+                    <button id = "make-">Generate New Schedule</button>
+                </div> 
             </div>
         
             <div id = "add-schedule">
@@ -189,7 +191,7 @@
                 I assume that this will be our monthly budget area.
                 Will leave it mostly blank until later on. 
             -->
-            <div id = "monthy-spending">
+            <div id = "monthly-spending">
                 <p>
                     Monthly Budget<br>
                     $X.XX
