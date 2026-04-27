@@ -1,8 +1,39 @@
 /* Can add in custom fonts later */
+/* This is to remove the arrows on the input fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 body
 {
+
+    /* This is for the station's name */
+    h2
+    {
+        width: fit-content;
+        padding: 20px;
+        border: 1px solid black;
+        text-align: left;
+        margin-bottom: 0px;
+    }
+
     
+    /* This is for the "Generate New Schedule" button */
+    #generate-new-schedule
+    {
+       margin: 40px auto 0;
+    }
+    
+    /* As of now, I will just call this radio-station-one and that's basically the whole table */
+    #radio-station-one
+    {
+        
+        width: 50%;
+        margin: 0 auto;
+    }
+
     /* To make the input fields a little smaller */
     input
     {
@@ -12,16 +43,19 @@ body
     /* To adjust the current table */
     #schedule
     {
-        width: 90%;
+
         margin: 0 auto;
         border: 1px solid black;
         padding: 20px;
-        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        
 
         /* Aligns the text of the table center */
         table
         {
             text-align: center;
+            border-collapse: collapse;
         }
         
         /* Adjustes the cells under DAYPART */
@@ -29,5 +63,40 @@ body
         {
             padding: 5px;
         }
+
+    }
+
+    /* This is for the adding a new schedule block. */
+    #add-schedule
+    {
+        display: grid;
+        padding: 20px;
+        margin: 40px auto 0;
+        border: 1px solid black;
+        gap: 20px;
+        justify-items: center;
+    }
+
+    /* This is for the monthly spending at the bottom */
+    #monthly-spending
+    {
+        display: flex;
+        justify-content: flex-end;
+        margin: 5px;
+        p
+        {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    }
+
+    /* 
+        This is for the last row in the table. It's trying to mimic what the final
+        row looks like in the excel sheet.
+    */
+    tr:nth-last-child(1)
+    {
+        border-top: 1px solid black;
     }
 }
