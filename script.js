@@ -1,4 +1,5 @@
 // All of this code is for the schedule
+// Variables
 const scheduleTable = document.querySelector("#schedule");
 const allTotalIDs = ["adsTotal", "mondayTotal", "tuesdayTotal",
     "wednesdayTotal", "thursdayTotal", "fridayTotal", "saturdayTotal",
@@ -13,11 +14,45 @@ const allRowClasses = ["rowOne", "rowTwo", "rowThree", "rowFour", "rowFive"];
 const allRowColumnTotalID = ["rowOneTotal", "rowTwoTotal", "rowTotalThree", "rowTotalFour", "rowTotalFive"];
 
 
-
 // This will be for the table. It will automatically listen for any inputs when the client types in a number
-scheduleTable.addEventListener("input", () =>
+scheduleTable.addEventListener("input", (event) =>
 {
+    // If the target is an input field.
+    if (event.target.tagName === "INPUT")
+    {   
+        // Turn the value into a float
+        const value = parseFloat(event.target.value)
+
+        // if the value is negative and is not NaN
+        if (!isNaN(value) && value < 0)
+        {
+            event.target.value = 0;
+        }
+    }
+
     getAllTotals();
+})
+
+// This is a event listener that listens to the keyboard. If they press in a "-" and if it's coming
+// from the input tag, don't let it happen
+scheduleTable.addEventListener("keydown", (event) =>
+{
+    if ( event.key === "-" && event.target.tagName === "INPUT")
+    {
+        event.preventDefault();
+    }
+})
+
+// This listens for anything that the user pastes into the table. If it contains
+// a "-", it will stop it.
+scheduleTable.addEventListener("paste", (event) =>
+{
+    const pastedNum = event.clipboardData.getData("text")
+
+    if (pastedNum.includes("-"))
+    {
+        event.preventDefault();
+    }
 })
 
 /*
@@ -54,7 +89,7 @@ function calculateTotalColumn(singleColumn)
     return total;
 }
 
-// This is to calculate each row.
+// This is to calculate each row. It will add up all of the cells in a row and return the total of it.
 function calculateTotalRow(singleRow)
 {
     let total = 0;
@@ -88,21 +123,21 @@ function calculateTotalRow(singleRow)
 }
 
 /*
-    This is for the columns. It's basically the same thing, but no "$".
+    This method will display the total of a row / column.
 */
-function displayTotalColumn(totalCell, amount)
+function displayTotal(totalCell, amount, moneySign = false)
 {
+    // We will get the total cell (either a row or column)
     const totalCellId = document.querySelector("#" + totalCell);
 
-    totalCellId.textContent = amount;
-}
-
-// This is for the rows only. It adds a "$" to every cost cell in each row.
-function displayTotalRow(totalCell, amount)
-{
-   const totalCellId = document.querySelector("#" + totalCell);
-
-    totalCellId.textContent = "$" + amount;
+    // If there will be a money sign, then concatinate it to the amount
+    if (moneySign)
+    {
+        totalCellId.textContent = "$" + amount;
+    } else // else, just put the amount only
+    {
+        totalCellId.textContent = amount;
+    }  
 } 
 
 /*
@@ -116,7 +151,7 @@ function getAllTotals()
     {
         // This is for calculating the total row to row.
         const rowAmount = calculateTotalRow(allRowClasses[i])
-        displayTotalRow(allRowColumnTotalID[i], rowAmount.toFixed(2))
+        displayTotal(allRowColumnTotalID[i], rowAmount.toFixed(2))
     }
      
 
@@ -130,11 +165,11 @@ function getAllTotals()
         // else, don't
         if (i > allTotalIDs.length - 3)
         {
-            displayTotalColumn(allTotalIDs[i], "$" + amount.toFixed(2))
+            displayTotal(allTotalIDs[i], amount.toFixed(2), true)
         }
         else
         {
-            displayTotalColumn(allTotalIDs[i], amount)
+            displayTotal(allTotalIDs[i], amount)
         }   
     }
 }
