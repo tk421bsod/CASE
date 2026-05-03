@@ -2,6 +2,11 @@ body
 {
     font-family: sans-serif;
 
+    #company-name
+    {
+        text-align: center;
+    }
+
     /* This is for the station's name */
     h2
     {
